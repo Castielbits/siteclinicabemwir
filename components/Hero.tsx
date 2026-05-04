@@ -56,25 +56,25 @@ export default function Hero() {
         </ScrollReveal>
 
         <ScrollReveal delay={4}>
-          <div className="mt-8 sm:mt-10 flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row sm:justify-center sm:gap-4">
-            <div className="flex w-full flex-col items-center sm:w-auto">
+          <div className="mt-8 sm:mt-10 flex w-full flex-col items-center sm:w-auto">
+            <div className="flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row sm:justify-center sm:gap-4">
               <Link href="#elegibilidade" className="btn-primary btn-cream w-full sm:w-auto justify-center">
                 {siteConfig.primaryCtaLabel}
                 <ArrowRight size={16} />
               </Link>
-              <p className="mt-2 text-[0.72rem] tracking-wide text-white/45 text-center">
-                {heroContent.ctaSubtext}
-              </p>
+              <a
+                href={siteConfig.whatsappUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-primary btn-outline-light w-full sm:w-auto justify-center"
+              >
+                {siteConfig.secondaryCtaLabel}
+                <ArrowUpRight size={16} />
+              </a>
             </div>
-            <a
-              href={siteConfig.whatsappUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="btn-primary btn-outline-light w-full sm:w-auto justify-center"
-            >
-              {siteConfig.secondaryCtaLabel}
-              <ArrowUpRight size={16} />
-            </a>
+            <p className="mt-3 text-[0.72rem] tracking-wide text-white/45 text-center">
+              {heroContent.ctaSubtext}
+            </p>
           </div>
         </ScrollReveal>
 
