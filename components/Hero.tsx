@@ -43,16 +43,29 @@ export default function Hero() {
 
         <ScrollReveal delay={3}>
           <p className="mt-3 sm:mt-4 max-w-xl text-sm leading-6 sm:text-base sm:leading-7 text-white/45">
-            {heroContent.body}
+            {heroContent.bodySegments.map((seg, i) =>
+              seg.bold ? (
+                <strong key={i} className="font-semibold text-white/85">
+                  {seg.text}
+                </strong>
+              ) : (
+                <span key={i}>{seg.text}</span>
+              )
+            )}
           </p>
         </ScrollReveal>
 
         <ScrollReveal delay={4}>
-          <div className="mt-8 sm:mt-10 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:justify-center sm:gap-4">
-            <Link href="#elegibilidade" className="btn-primary btn-cream w-full sm:w-auto justify-center">
-              {siteConfig.primaryCtaLabel}
-              <ArrowRight size={16} />
-            </Link>
+          <div className="mt-8 sm:mt-10 flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row sm:justify-center sm:gap-4">
+            <div className="flex w-full flex-col items-center sm:w-auto">
+              <Link href="#elegibilidade" className="btn-primary btn-cream w-full sm:w-auto justify-center">
+                {siteConfig.primaryCtaLabel}
+                <ArrowRight size={16} />
+              </Link>
+              <p className="mt-2 text-[0.72rem] tracking-wide text-white/45 text-center">
+                {heroContent.ctaSubtext}
+              </p>
+            </div>
             <a
               href={siteConfig.whatsappUrl}
               target="_blank"

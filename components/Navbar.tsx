@@ -47,8 +47,8 @@ export default function Navbar() {
           <Image
             src={logoComTexto}
             alt="Bem-wir"
-            height={40}
-            className="h-10 w-auto transition-all duration-500"
+            height={56}
+            className="h-12 sm:h-14 w-auto transition-all duration-500"
             style={{
               filter: solid ? "none" : "brightness(0) invert(1)",
             }}

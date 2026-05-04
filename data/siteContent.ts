@@ -28,9 +28,17 @@ export const heroContent = {
   eyebrow: "Ciência e empatia na gestão do bem-estar",
   title: "Remodulando cérebro, corpo e vida.",
   intro:
-    "A Bem-wir junta fisioterapia em neurociências, psicologia e neuromodulação no mesmo programa. Corpo, sistema nervoso e contexto emocional são lidos juntos.",
-  body:
-    "Quando a dor persiste, sono, humor, trabalho e relações quase sempre vão junto. O cuidado aqui é clínico, coordenado e humano.",
+    "A Bem-wir agrega fisioterapia em neurociências, psicologia e neuromodulação no mesmo programa. Corpo, sistema nervoso e contexto emocional são avaliados de forma sistêmica.",
+  bodySegments: [
+    { text: "Quando a dor ", bold: false },
+    { text: "física ou emocional persiste", bold: true },
+    { text: ", sono e relações ", bold: false },
+    { text: "geralmente são afetadas", bold: true },
+    { text: ". ", bold: false },
+    { text: "Nosso cuidado é", bold: true },
+    { text: " clínico, coordenado e humano.", bold: false },
+  ],
+  ctaSubtext: "A equipe analisa as suas respostas",
   badges: [
     "Fibromialgia",
     "Depressão",
@@ -43,16 +51,15 @@ export const conditionsSection = {
   eyebrow: "Para quem é",
   title: "Tudo bem precisar de apoio. Você não está só.",
   description:
-    "A Bem-wir foi pensada para quem já convive com dor ou sofrimento persistente que atravessa várias áreas da vida e precisa de um cuidado clínico que não funciona em pedaços.",
-  manifesto:
-    "Muitos pacientes chegam depois de anos tentando abordagens isoladas. Aqui o ponto de partida é entender o caso inteiro, não só o sintoma mais visível.",
+    "A Bem-wir ajuda os pacientes que passaram anos tentando abordagens isoladas, sem resultados efetivos. Aqui o ponto de partida é entender o caso por inteiro e não apenas o sintoma mais visível.",
+  manifesto: "",
 };
 
 export const conditions = [
   {
     title: "Dor crônica",
     summary:
-      "O corpo fica em alerta constante e a dor começa a organizar a rotina inteira.",
+      "O corpo fica em alerta constante e a dor desequilibra a rotina inteira.",
   },
   {
     title: "Fibromialgia",
@@ -62,12 +69,12 @@ export const conditions = [
   {
     title: "Depressão e sofrimento persistente",
     summary:
-      "O corpo desacelera, a energia muda e o dia a dia perde previsibilidade.",
+      "A mente perde capacidades cognitivas, emocionais, físicas e sociais, não só entristece, ela limita, esgota e desconecta.",
   },
   {
     title: "TDAH e estados de hiperalerta",
     summary:
-      "O sistema nervoso fica em vigilância e isso reverbera no sono, na atenção e na dor.",
+      "Uma mente inquieta que luta, diariamente, com prejuízos reais que vão além da distração.",
   },
   {
     title: "Dores orofaciais crônicas",
@@ -75,14 +82,14 @@ export const conditions = [
       "Mandíbula, face, cabeça e pescoço concentram tensão e sensibilidade que limitam a função.",
   },
   {
-    title: "Insônia e fadiga associadas à dor",
+    title: "Insônia e fadiga",
     summary:
-      "Descanso e recuperação deixam de acontecer e o corpo perde margem para se regular.",
+      "Descanso e recuperação deixam de acontecer e o corpo perde capacidade para se regular.",
   },
   {
-    title: "Ansiedade e sobrecarga corporal",
+    title: "Ansiedade e sobrecarga",
     summary:
-      "Preocupação, tensão e dor se alimentam ao longo do dia e ninguém consegue desacelerar.",
+      "Mente e corpo sobrecarregados pelo estado de alerta e vigília que roubam a sua saúde e a sua qualidade de vida.",
   },
 ];
 
@@ -105,10 +112,17 @@ export const methodSection = {
   eyebrow: "Método Bem-wir",
   title: "Psicologia, fisioterapia e neuromodulação em conversa constante.",
   description:
-    "Avaliação estratégica, plano personalizado, acompanhamento que muda conforme a resposta do paciente. As profissionais pensam o caso juntas em vez de cada uma cuidar de um pedaço.",
+    "Avaliação humanizada. As profissionais trabalham o caso conjuntamente, objetivando o melhor resultado.",
 };
 
-export const methodSteps = [
+type MethodStep = {
+  number: string;
+  title: string;
+  text: string;
+  highlight?: string;
+};
+
+export const methodSteps: MethodStep[] = [
   {
     number: "01",
     title: "Leitura clínica ampla",
@@ -117,7 +131,8 @@ export const methodSteps = [
   {
     number: "02",
     title: "Programa integrado",
-    text: "Fisioterapia em neurociências, psicologia e neuromodulação entram na medida certa para cada caso, sem excesso de promessa e sem protocolo engessado.",
+    text: "Fisioterapia em neurociências, psicologia e neuromodulação entram na medida certa para cada paciente.",
+    highlight: "paciente",
   },
   {
     number: "03",
@@ -137,7 +152,7 @@ export const methodPillars = [
   },
   {
     title: "Neuromodulação",
-    text: "Recurso inserido no programa quando faz sentido clínico e em diálogo com todo o resto.",
+    text: "Ferramenta de tratamento baseada em evidência científica.",
   },
 ];
 
@@ -154,8 +169,8 @@ export const neuroSpotlight = {
   eyebrow: "Neuromodulação",
   title: "Neuromodulação dentro de um cuidado mais amplo.",
   description:
-    "Na Bem-wir, a neuromodulação não aparece como procedimento solto. Ela faz parte de um programa maior, pensado para regular circuitos de dor, humor, atenção e resposta ao estresse.",
-  note: "Explicamos a abordagem completa em uma página própria, com linguagem clara e sem jargão desnecessário.",
+    "Na Bem-wir a neuromodulação faz parte de um programa integrado multimodal pensado para regular circuitos de dor, humor, atenção e resposta ao estresse.",
+  note: "Explicamos a abordagem completa em uma página própria.",
   ctaLabel: "Entender a neuromodulação",
 };
 

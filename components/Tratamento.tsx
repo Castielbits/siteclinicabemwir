@@ -10,6 +10,21 @@ import iconNeuro from "@/images/Camada 8.png";
 const pillarIcons = [iconFisio, iconPsico, iconNeuro];
 const accentColors = ["bg-butter", "bg-blush", "bg-sage"] as const;
 
+function renderStepText(text: string, highlight?: string) {
+  if (!highlight) return text;
+  const parts = text.split(highlight);
+  return parts.flatMap((part, i) =>
+    i < parts.length - 1
+      ? [
+          <span key={`p-${i}`}>{part}</span>,
+          <strong key={`h-${i}`} className="font-bold text-ink">
+            {highlight}
+          </strong>,
+        ]
+      : [<span key={`p-${i}`}>{part}</span>]
+  );
+}
+
 export default function Tratamento() {
   return (
     <section id="metodo" className="section-cream section-full relative overflow-hidden">
@@ -74,7 +89,7 @@ export default function Tratamento() {
                   </div>
                   <div className="pb-2">
                     <h4 className="font-serif text-xl font-bold text-ink">{step.title}</h4>
-                    <p className="mt-2 text-sm leading-7 text-muted">{step.text}</p>
+                    <p className="mt-2 text-sm leading-7 text-muted">{renderStepText(step.text, step.highlight)}</p>
                   </div>
                 </div>
               ))}
@@ -98,7 +113,7 @@ export default function Tratamento() {
                 {methodSteps.map((step) => (
                   <div key={step.title + "-label"}>
                     <h4 className="font-serif text-xl font-bold text-ink">{step.title}</h4>
-                    <p className="mt-3 text-sm leading-7 text-muted">{step.text}</p>
+                    <p className="mt-3 text-sm leading-7 text-muted">{renderStepText(step.text, step.highlight)}</p>
                   </div>
                 ))}
               </div>

@@ -27,9 +27,11 @@ export default function Problema() {
               <p className="text-lg leading-8 text-white/65">
                 {conditionsSection.description}
               </p>
-              <p className="text-base leading-8 text-white/40 italic">
-                &ldquo;{conditionsSection.manifesto}&rdquo;
-              </p>
+              {conditionsSection.manifesto ? (
+                <p className="text-base leading-8 text-white/40 italic">
+                  &ldquo;{conditionsSection.manifesto}&rdquo;
+                </p>
+              ) : null}
             </div>
           </ScrollReveal>
         </div>
